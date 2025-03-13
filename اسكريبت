@@ -1,0 +1,51 @@
+<script>
+	$(document).on('click', '.qty', function(e) {
+        e.preventDefault();
+		//console.log('inside function');
+
+        var quantity = $(this).val(); 
+		var id = $(this).attr("data-id");
+		var url = "{{ route('update.quantity', ':id') }}";
+        url = url.replace(':id', id);
+		//console.log(url);
+ 
+        $.ajax({
+            url: url,		 
+            method: "POST",
+            dataType: "json",
+            data: {
+                _token: "{{ csrf_token() }}",
+
+                quantity: quantity,
+                id: id,
+            },
+			success: function(data) {
+
+			}
+		});
+	});
+	function plus(count){
+      var valuee = document.getElementById('count').value ;
+	  valuee++ ;
+	  document.getElementById('count').value = valuee ;
+	  console.log(document.getElementById('count').value);
+
+    }
+	function minus(count){
+      var valuee = document.getElementById('count').value ;
+	  valuee-- ;
+	  document.getElementById('count').value = valuee ;
+	  console.log(document.getElementById('count').value);
+
+    }
+    
+</script>
+
+-------------------------------------------------
+ <div class="quantity">
+												   <input type="button" class="plus" value="+" id="plus" onclick="plus(parseInt(document.getElementById('count').value))">
+                                                   <input data-id="{{ $item->id }}" id="count" type="number" class=" qty text input-quantity"
+                                                     step="1" min="0" name="quantity[]"
+                                                       value="{{ $item->quantity }}" title="Qty" size="4">
+													<input type="button" class="minus" value="-" id="minus" onclick="minus(parseInt(document.getElementById('count').value))">
+                                               </div>
