@@ -74,7 +74,8 @@
              
         <div class="location-img">
 
-            <img src="{{ $product->image ? asset('storage/' . $product->image) : asset('assets/images/placeholder.jpg') }}" alt="product">
+           {{-- <img src="{{ $product->image ? asset('storage/' . $product->image) : asset('assets/images/placeholder.jpg') }}" alt="product"> --}}
+           <img src="{{ $product->image }}" alt="product">
 
         </div>
         <div class="row">
