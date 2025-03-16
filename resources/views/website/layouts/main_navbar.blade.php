@@ -1,7 +1,7 @@
 <!-- Main navbar -->
 <div class="navbar navbar-inverse bg-brown-400">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="{{ route('user.Index') }}"><img src="https://www.freewebheaders.com/wp-content/gallery/technology-industry-size-800x200/decorated-smartphone-on-blue-background-header_size-800x200-1.jpg" style="margin-top: -5px; height: 33px;" alt=""></a>
+			<a class="navbar-brand" href="{{ route('user.Index') }}">Shop </a>
 			<ul class="nav navbar-nav visible-xs-block">
 				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
 				<li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
